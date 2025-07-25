@@ -1,1 +1,241 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c1{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c0{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c2{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c0"><span class="c1">&lt;!DOCTYPE html&gt;</span></p><p class="c0"><span class="c1">&lt;html lang=&quot;en&quot;&gt;</span></p><p class="c0"><span class="c1">&lt;head&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;title&gt;Social Media Post Generator&lt;/title&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;!-- Link to Tailwind CSS for easy styling --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;!-- Using the Inter font from Google Fonts --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;style&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; /* Applying the Inter font to the entire page */</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; body {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: &#39;Inter&#39;, sans-serif;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; /* Simple spinner animation */</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; .spinner {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 4px solid rgba(0, 0, 0, 0.1);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 36px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 36px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 50%;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-left-color: #09f;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: spin 1s ease infinite;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; @keyframes spin {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% { transform: rotate(0deg); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% { transform: rotate(360deg); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;/style&gt;</span></p><p class="c0"><span class="c1">&lt;/head&gt;</span></p><p class="c0"><span class="c1">&lt;body class=&quot;bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen&quot;&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;div class=&quot;w-full max-w-2xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-xl&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;header class=&quot;text-center mb-8&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h1 class=&quot;text-3xl md:text-4xl font-extrabold text-gray-900&quot;&gt;Social Media Post Generator&lt;/h1&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p class=&quot;text-gray-500 mt-2&quot;&gt;Create engaging posts for your favorite platforms in seconds.&lt;/p&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/header&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;main&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;!-- Input Form --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;space-y-6&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;topic&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;Topic&lt;/label&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;text&quot; id=&quot;topic&quot; class=&quot;w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition&quot; placeholder=&quot;e.g., The future of AI&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;tone&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;Tone&lt;/label&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;select id=&quot;tone&quot; class=&quot;w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Professional&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Witty&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Casual&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Inspirational&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Humorous&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Formal&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/select&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;platform&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;Platform&lt;/label&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;select id=&quot;platform&quot; class=&quot;w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Twitter&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;LinkedIn&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Instagram&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;Facebook&lt;/option&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/select&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;!-- Action Button --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;mt-8&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button id=&quot;generateBtn&quot; class=&quot;w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 ease-in-out transform hover:scale-105&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Generate Post</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/button&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;!-- Result Section --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;result-container&quot; class=&quot;mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200&quot; style=&quot;display: none;&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 class=&quot;text-lg font-semibold text-gray-800 mb-4&quot;&gt;Generated Post:&lt;/h3&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;result&quot; class=&quot;text-gray-700 whitespace-pre-wrap&quot;&gt;&lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button id=&quot;copyBtn&quot; class=&quot;mt-4 bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition&quot;&gt;Copy to Clipboard&lt;/button&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;!-- Loading Spinner --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;loader&quot; class=&quot;mt-8 text-center&quot; style=&quot;display: none;&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;spinner mx-auto&quot;&gt;&lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;text-gray-500 mt-2&quot;&gt;Generating your post...&lt;/p&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;!-- Error Message Box --&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;error-box&quot; class=&quot;mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/main&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;footer class=&quot;text-center mt-10 text-xs text-gray-400&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Powered by Gemini&lt;/p&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/footer&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;script&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const generateBtn = document.getElementById(&#39;generateBtn&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const topicInput = document.getElementById(&#39;topic&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const toneSelect = document.getElementById(&#39;tone&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const platformSelect = document.getElementById(&#39;platform&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const resultContainer = document.getElementById(&#39;result-container&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const resultDiv = document.getElementById(&#39;result&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const loader = document.getElementById(&#39;loader&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const errorBox = document.getElementById(&#39;error-box&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const copyBtn = document.getElementById(&#39;copyBtn&#39;);</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; // --- Main function to generate the post ---</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; const generatePost = async () =&gt; {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 1. Get user inputs</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const topic = topicInput.value;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const tone = toneSelect.value;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const platform = platformSelect.value;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 2. Basic validation</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!topic.trim()) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; showError(&quot;Please enter a topic to generate a post.&quot;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 3. Update UI for loading state</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; showLoader(true);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; resultContainer.style.display = &#39;none&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; errorBox.style.display = &#39;none&#39;;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 4. Construct the prompt for the LLM</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const prompt = `Act as a social media marketing expert. Write a post for ${platform} about &quot;${topic}&quot; in a ${tone} tone. Include 2-3 relevant hashtags.`;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 5. Call the Gemini API</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const text = await callGemini(prompt);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 6. Display the result</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; resultDiv.innerText = text.trim();</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; resultContainer.style.display = &#39;block&#39;;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } catch (error) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.error(&quot;API Call failed:&quot;, error);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; showError(error.message || &quot;Failed to generate post. Please try again.&quot;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } finally {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 7. Hide loader</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; showLoader(false);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; };</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; // --- Function to call Gemini API with exponential backoff ---</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; async function callGemini(prompt, maxRetries = 3) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; let attempt = 0;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; let delay = 1000; // Start with 1 second</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (attempt &lt; maxRetries) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const apiKey = &quot;AIzaSyC5QsomH270fImykkBttB3NZeAhAeLL7tQ&quot;; // Canvas will provide the key</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const payload = {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; contents: [{</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; role: &quot;user&quot;,</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parts: [{ text: prompt }]</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }],</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; };</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const response = await fetch(apiUrl, {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; method: &#39;POST&#39;,</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; body: JSON.stringify(payload)</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!response.ok) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const errorBody = await response.json();</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;throw new Error(`API Error: ${response.status} ${response.statusText}. Details: ${JSON.stringify(errorBody.error)}`);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const result = await response.json();</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (result.candidates &amp;&amp; result.candidates.length &gt; 0 &amp;&amp;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result.candidates[0].content &amp;&amp; result.candidates[0].content.parts &amp;&amp;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result.candidates[0].content.parts.length &gt; 0) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return result.candidates[0].content.parts[0].text;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new Error(&quot;Invalid response structure from API.&quot;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } catch (error) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; attempt++;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (attempt &gt;= maxRetries) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw error; // Rethrow error after max retries</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(`Attempt ${attempt} failed. Retrying in ${delay}ms...`);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; await new Promise(resolve =&gt; setTimeout(resolve, delay));</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; delay *= 2; // Exponential backoff</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; // --- UI Helper Functions ---</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; function showLoader(isLoading) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; loader.style.display = isLoading ? &#39;block&#39; : &#39;none&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; generateBtn.disabled = isLoading;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; generateBtn.innerText = isLoading ? &#39;Generating...&#39; : &#39;Generate Post&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isLoading) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; generateBtn.classList.add(&#39;cursor-not-allowed&#39;, &#39;opacity-70&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; generateBtn.classList.remove(&#39;cursor-not-allowed&#39;, &#39;opacity-70&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; function showError(message) {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; errorBox.innerText = message;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; errorBox.style.display = &#39;block&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; // --- Event Listeners ---</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; generateBtn.addEventListener(&#39;click&#39;, generatePost);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; copyBtn.addEventListener(&#39;click&#39;, () =&gt; {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const tempTextArea = document.createElement(&#39;textarea&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tempTextArea.value = resultDiv.innerText;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.body.appendChild(tempTextArea);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tempTextArea.select();</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.execCommand(&#39;copy&#39;);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.body.removeChild(tempTextArea);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copyBtn.innerText = &#39;Copied!&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copyBtn.innerText = &#39;Copy to Clipboard&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 2000);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;/script&gt;</span></p><p class="c0"><span class="c1">&lt;/body&gt;</span></p><p class="c0"><span class="c1">&lt;/html&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0 c2"><span class="c1"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Post Generator</title>
+    
+    <!-- Link to Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Using the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Applying the Inter font to the entire page */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple spinner animation */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-2xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-xl">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Social Media Post Generator</h1>
+            <p class="text-gray-500 mt-2">Create engaging posts for your favorite platforms in seconds.</p>
+        </header>
+        
+        <main>
+            <!-- Input Form -->
+            <div class="space-y-6">
+                <div>
+                    <label for="topic" class="block text-sm font-medium text-gray-700 mb-1">Topic</label>
+                    <input type="text" id="topic" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="e.g., The future of AI">
+                </div>
+
+                <div>
+                    <label for="tone" class="block text-sm font-medium text-gray-700 mb-1">Tone</label>
+                    <select id="tone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <option>Professional</option>
+                        <option>Witty</option>
+                        <option>Casual</option>
+                        <option>Inspirational</option>
+                        <option>Humorous</option>
+                        <option>Formal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="platform" class="block text-sm font-medium text-gray-700 mb-1">Platform</label>
+                    <select id="platform" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <option>Twitter</option>
+                        <option>LinkedIn</option>
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-8">
+                <button id="generateBtn" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 ease-in-out transform hover:scale-105">
+                    Generate Post
+                </button>
+            </div>
+            
+            <!-- Result Section -->
+            <div id="result-container" class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200" style="display: none;">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Generated Post:</h3>
+                <div id="result" class="text-gray-700 whitespace-pre-wrap"></div>
+                 <button id="copyBtn" class="mt-4 bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition">Copy to Clipboard</button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loader" class="mt-8 text-center" style="display: none;">
+                 <div class="spinner mx-auto"></div>
+                 <p class="text-gray-500 mt-2">Generating your post...</p>
+            </div>
+
+            <!-- Error Message Box -->
+            <div id="error-box" class="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg" style="display: none;"></div>
+
+        </main>
+        
+        <footer class="text-center mt-10 text-xs text-gray-400">
+            <p>Powered by Gemini</p>
+        </footer>
+    </div>
+
+    <script>
+        const generateBtn = document.getElementById('generateBtn');
+        const topicInput = document.getElementById('topic');
+        const toneSelect = document.getElementById('tone');
+        const platformSelect = document.getElementById('platform');
+        const resultContainer = document.getElementById('result-container');
+        const resultDiv = document.getElementById('result');
+        const loader = document.getElementById('loader');
+        const errorBox = document.getElementById('error-box');
+        const copyBtn = document.getElementById('copyBtn');
+
+        // --- Main function to generate the post ---
+        const generatePost = async () => {
+            // 1. Get user inputs
+            const topic = topicInput.value;
+            const tone = toneSelect.value;
+            const platform = platformSelect.value;
+
+            // 2. Basic validation
+            if (!topic.trim()) {
+                showError("Please enter a topic to generate a post.");
+                return;
+            }
+
+            // 3. Update UI for loading state
+            showLoader(true);
+            resultContainer.style.display = 'none';
+            errorBox.style.display = 'none';
+
+            // 4. Construct the prompt for the LLM
+            const prompt = `Act as a social media marketing expert. Write a post for ${platform} about "${topic}" in a ${tone} tone. Include 2-3 relevant hashtags.`;
+            
+            try {
+                // 5. Call the Gemini API
+                const text = await callGemini(prompt);
+                
+                // 6. Display the result
+                resultDiv.innerText = text.trim();
+                resultContainer.style.display = 'block';
+
+            } catch (error) {
+                console.error("API Call failed:", error);
+                showError(error.message || "Failed to generate post. Please try again.");
+            } finally {
+                // 7. Hide loader
+                showLoader(false);
+            }
+        };
+
+        // --- Function to call Gemini API with exponential backoff ---
+        async function callGemini(prompt, maxRetries = 3) {
+            let attempt = 0;
+            let delay = 1000; // Start with 1 second
+
+            while (attempt < maxRetries) {
+                try {
+                    const apiKey = "AIzaSyC5QsomH270fImykkBttB3NZeAhAeLL7tQ"; // Canvas will provide the key
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                    
+                    const payload = {
+                        contents: [{
+                            role: "user",
+                            parts: [{ text: prompt }]
+                        }],
+                    };
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                         const errorBody = await response.json();
+                         throw new Error(`API Error: ${response.status} ${response.statusText}. Details: ${JSON.stringify(errorBody.error)}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("Invalid response structure from API.");
+                    }
+
+                } catch (error) {
+                    attempt++;
+                    if (attempt >= maxRetries) {
+                        throw error; // Rethrow error after max retries
+                    }
+                    console.log(`Attempt ${attempt} failed. Retrying in ${delay}ms...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff
+                }
+            }
+        }
+
+        // --- UI Helper Functions ---
+        function showLoader(isLoading) {
+            loader.style.display = isLoading ? 'block' : 'none';
+            generateBtn.disabled = isLoading;
+            generateBtn.innerText = isLoading ? 'Generating...' : 'Generate Post';
+            if (isLoading) {
+                generateBtn.classList.add('cursor-not-allowed', 'opacity-70');
+            } else {
+                generateBtn.classList.remove('cursor-not-allowed', 'opacity-70');
+            }
+        }
+
+        function showError(message) {
+            errorBox.innerText = message;
+            errorBox.style.display = 'block';
+        }
+
+        // --- Event Listeners ---
+        generateBtn.addEventListener('click', generatePost);
+        
+        copyBtn.addEventListener('click', () => {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = resultDiv.innerText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            copyBtn.innerText = 'Copied!';
+            setTimeout(() => {
+                copyBtn.innerText = 'Copy to Clipboard';
+            }, 2000);
+        });
+
+    </script>
+</body>
+</html>
+
