@@ -1,2 +1,243 @@
-# Social-Post-Generator
-A LLM capacity testing app 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Post Generator</title>
+    
+    <!-- Link to Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Using the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Applying the Inter font to the entire page */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple spinner animation */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-2xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-xl">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Social Media Post Generator</h1>
+            <p class="text-gray-500 mt-2">Create engaging posts for your favorite platforms in seconds.</p>
+        </header>
+        
+        <main>
+            <!-- Input Form -->
+            <div class="space-y-6">
+                <div>
+                    <label for="topic" class="block text-sm font-medium text-gray-700 mb-1">Topic</label>
+                    <input type="text" id="topic" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="e.g., The future of AI">
+                </div>
+
+                <div>
+                    <label for="tone" class="block text-sm font-medium text-gray-700 mb-1">Tone</label>
+                    <select id="tone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <option>Professional</option>
+                        <option>Witty</option>
+                        <option>Casual</option>
+                        <option>Inspirational</option>
+                        <option>Humorous</option>
+                        <option>Formal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="platform" class="block text-sm font-medium text-gray-700 mb-1">Platform</label>
+                    <select id="platform" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <option>Twitter</option>
+                        <option>LinkedIn</option>
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-8">
+                <button id="generateBtn" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 ease-in-out transform hover:scale-105">
+                    Generate Post
+                </button>
+            </div>
+            
+            <!-- Result Section -->
+            <div id="result-container" class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200" style="display: none;">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Generated Post:</h3>
+                <div id="result" class="text-gray-700 whitespace-pre-wrap"></div>
+                 <button id="copyBtn" class="mt-4 bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition">Copy to Clipboard</button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loader" class="mt-8 text-center" style="display: none;">
+                 <div class="spinner mx-auto"></div>
+                 <p class="text-gray-500 mt-2">Generating your post...</p>
+            </div>
+
+            <!-- Error Message Box -->
+            <div id="error-box" class="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg" style="display: none;"></div>
+
+        </main>
+        
+        <footer class="text-center mt-10 text-xs text-gray-400">
+            <p>Powered by Gemini</p>
+        </footer>
+    </div>
+
+    <script>
+        const generateBtn = document.getElementById('generateBtn');
+        const topicInput = document.getElementById('topic');
+        const toneSelect = document.getElementById('tone');
+        const platformSelect = document.getElementById('platform');
+        const resultContainer = document.getElementById('result-container');
+        const resultDiv = document.getElementById('result');
+        const loader = document.getElementById('loader');
+        const errorBox = document.getElementById('error-box');
+        const copyBtn = document.getElementById('copyBtn');
+
+        // --- Main function to generate the post ---
+        const generatePost = async () => {
+            // 1. Get user inputs
+            const topic = topicInput.value;
+            const tone = toneSelect.value;
+            const platform = platformSelect.value;
+
+            // 2. Basic validation
+            if (!topic.trim()) {
+                showError("Please enter a topic to generate a post.");
+                return;
+            }
+
+            // 3. Update UI for loading state
+            showLoader(true);
+            resultContainer.style.display = 'none';
+            errorBox.style.display = 'none';
+
+            // 4. Construct the prompt for the LLM
+            const prompt = `Act as a social media marketing expert. Write a post for ${platform} about "${topic}" in a ${tone} tone. Include 2-3 relevant hashtags.`;
+            
+            try {
+                // 5. Call the Gemini API
+                const text = await callGemini(prompt);
+                
+                // 6. Display the result
+                resultDiv.innerText = text.trim();
+                resultContainer.style.display = 'block';
+
+            } catch (error) {
+                console.error("API Call failed:", error);
+                showError(error.message || "Failed to generate post. Please try again.");
+            } finally {
+                // 7. Hide loader
+                showLoader(false);
+            }
+        };
+
+        // --- Function to call Gemini API with exponential backoff ---
+        async function callGemini(prompt, maxRetries = 3) {
+            let attempt = 0;
+            let delay = 1000; // Start with 1 second
+
+            while (attempt < maxRetries) {
+                try {
+                    const apiKey = "AIzaSyC5QsomH270fImykkBttB3NZeAhAeLL7tQ"; // Canvas will provide the key
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                    
+                    const payload = {
+                        contents: [{
+                            role: "user",
+                            parts: [{ text: prompt }]
+                        }],
+                    };
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                         const errorBody = await response.json();
+                         throw new Error(`API Error: ${response.status} ${response.statusText}. Details: ${JSON.stringify(errorBody.error)}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("Invalid response structure from API.");
+                    }
+
+                } catch (error) {
+                    attempt++;
+                    if (attempt >= maxRetries) {
+                        throw error; // Rethrow error after max retries
+                    }
+                    console.log(`Attempt ${attempt} failed. Retrying in ${delay}ms...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff
+                }
+            }
+        }
+
+        // --- UI Helper Functions ---
+        function showLoader(isLoading) {
+            loader.style.display = isLoading ? 'block' : 'none';
+            generateBtn.disabled = isLoading;
+            generateBtn.innerText = isLoading ? 'Generating...' : 'Generate Post';
+            if (isLoading) {
+                generateBtn.classList.add('cursor-not-allowed', 'opacity-70');
+            } else {
+                generateBtn.classList.remove('cursor-not-allowed', 'opacity-70');
+            }
+        }
+
+        function showError(message) {
+            errorBox.innerText = message;
+            errorBox.style.display = 'block';
+        }
+
+        // --- Event Listeners ---
+        generateBtn.addEventListener('click', generatePost);
+        
+        copyBtn.addEventListener('click', () => {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = resultDiv.innerText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            copyBtn.innerText = 'Copied!';
+            setTimeout(() => {
+                copyBtn.innerText = 'Copy to Clipboard';
+            }, 2000);
+        });
+
+    </script>
+</body>
+</html>
+
+
+
