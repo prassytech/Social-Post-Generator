@@ -1,241 +1,138 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Post Generator</title>
-    
-    <!-- Link to Tailwind CSS for easy styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Using the Inter font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Applying the Inter font to the entire page */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Simple spinner animation */
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border-left-color: #09f;
-            animation: spin 1s ease infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen">
+# Social Media Post Generator
 
-    <div class="w-full max-w-2xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-xl">
-        
-        <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Social Media Post Generator</h1>
-            <p class="text-gray-500 mt-2">Create engaging posts for your favorite platforms in seconds.</p>
-        </header>
-        
-        <main>
-            <!-- Input Form -->
-            <div class="space-y-6">
-                <div>
-                    <label for="topic" class="block text-sm font-medium text-gray-700 mb-1">Topic</label>
-                    <input type="text" id="topic" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="e.g., The future of AI">
-                </div>
+A modern, responsive web application that generates engaging social media posts using Google's Gemini AI. Create customized content for different platforms with various tones in seconds.
 
-                <div>
-                    <label for="tone" class="block text-sm font-medium text-gray-700 mb-1">Tone</label>
-                    <select id="tone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
-                        <option>Professional</option>
-                        <option>Witty</option>
-                        <option>Casual</option>
-                        <option>Inspirational</option>
-                        <option>Humorous</option>
-                        <option>Formal</option>
-                    </select>
-                </div>
+## 🚀 Features
 
-                <div>
-                    <label for="platform" class="block text-sm font-medium text-gray-700 mb-1">Platform</label>
-                    <select id="platform" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
-                        <option>Twitter</option>
-                        <option>LinkedIn</option>
-                        <option>Instagram</option>
-                        <option>Facebook</option>
-                    </select>
-                </div>
-            </div>
+- **AI-Powered Content Generation**: Leverages Google Gemini AI to create engaging social media posts
+- **Multi-Platform Support**: Generate posts optimized for Twitter, LinkedIn, Instagram, and Facebook
+- **Customizable Tone**: Choose from professional, witty, casual, inspirational, humorous, or formal tones
+- **Responsive Design**: Beautiful, mobile-friendly interface built with Tailwind CSS
+- **Copy to Clipboard**: Easy one-click copying of generated content
+- **Error Handling**: Robust error handling with retry mechanisms
+- **Loading States**: Smooth user experience with loading indicators
 
-            <!-- Action Button -->
-            <div class="mt-8">
-                <button id="generateBtn" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 ease-in-out transform hover:scale-105">
-                    Generate Post
-                </button>
-            </div>
-            
-            <!-- Result Section -->
-            <div id="result-container" class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200" style="display: none;">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Generated Post:</h3>
-                <div id="result" class="text-gray-700 whitespace-pre-wrap"></div>
-                 <button id="copyBtn" class="mt-4 bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition">Copy to Clipboard</button>
-            </div>
+## 🎯 Live Demo
 
-            <!-- Loading Spinner -->
-            <div id="loader" class="mt-8 text-center" style="display: none;">
-                 <div class="spinner mx-auto"></div>
-                 <p class="text-gray-500 mt-2">Generating your post...</p>
-            </div>
+[View Live Demo](https://prassytech.github.io/Social-Post-Generator/) <!-- Update this URL when deployed -->
 
-            <!-- Error Message Box -->
-            <div id="error-box" class="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg" style="display: none;"></div>
+## 🛠️ Technologies Used
 
-        </main>
-        
-        <footer class="text-center mt-10 text-xs text-gray-400">
-            <p>Powered by Gemini</p>
-        </footer>
-    </div>
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: Tailwind CSS
+- **Fonts**: Google Fonts (Inter)
+- **AI API**: Google Gemini AI
+- **Deployment**: GitHub Pages
 
-    <script>
-        const generateBtn = document.getElementById('generateBtn');
-        const topicInput = document.getElementById('topic');
-        const toneSelect = document.getElementById('tone');
-        const platformSelect = document.getElementById('platform');
-        const resultContainer = document.getElementById('result-container');
-        const resultDiv = document.getElementById('result');
-        const loader = document.getElementById('loader');
-        const errorBox = document.getElementById('error-box');
-        const copyBtn = document.getElementById('copyBtn');
+## 📁 Project Structure
 
-        // --- Main function to generate the post ---
-        const generatePost = async () => {
-            // 1. Get user inputs
-            const topic = topicInput.value;
-            const tone = toneSelect.value;
-            const platform = platformSelect.value;
+```
+Social-Post-Generator/
+├── index.html          # Main application file
+└── README.md          # Project documentation
+```
 
-            // 2. Basic validation
-            if (!topic.trim()) {
-                showError("Please enter a topic to generate a post.");
-                return;
-            }
+## 🚀 Getting Started
 
-            // 3. Update UI for loading state
-            showLoader(true);
-            resultContainer.style.display = 'none';
-            errorBox.style.display = 'none';
+### Prerequisites
 
-            // 4. Construct the prompt for the LLM
-            const prompt = `Act as a social media marketing expert. Write a post for ${platform} about "${topic}" in a ${tone} tone. Include 2-3 relevant hashtags.`;
-            
-            try {
-                // 5. Call the Gemini API
-                const text = await callGemini(prompt);
-                
-                // 6. Display the result
-                resultDiv.innerText = text.trim();
-                resultContainer.style.display = 'block';
+- A modern web browser
+- Google Gemini AI API key
 
-            } catch (error) {
-                console.error("API Call failed:", error);
-                showError(error.message || "Failed to generate post. Please try again.");
-            } finally {
-                // 7. Hide loader
-                showLoader(false);
-            }
-        };
+### Installation
 
-        // --- Function to call Gemini API with exponential backoff ---
-        async function callGemini(prompt, maxRetries = 3) {
-            let attempt = 0;
-            let delay = 1000; // Start with 1 second
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/prassytech/Social-Post-Generator.git
+   cd Social-Post-Generator
+   ```
 
-            while (attempt < maxRetries) {
-                try {
-                    const apiKey = "AIzaSyC5QsomH270fImykkBttB3NZeAhAeLL7tQ"; // Canvas will provide the key
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                    
-                    const payload = {
-                        contents: [{
-                            role: "user",
-                            parts: [{ text: prompt }]
-                        }],
-                    };
+2. **Set up API Key**
+   - Get your Gemini AI API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Replace the placeholder API key in `index.html` with your actual key
 
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
+3. **Open the application**
+   - Simply open `index.html` in your web browser
+   - Or use a local server for better development experience:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve .
+   ```
 
-                    if (!response.ok) {
-                         const errorBody = await response.json();
-                         throw new Error(`API Error: ${response.status} ${response.statusText}. Details: ${JSON.stringify(errorBody.error)}`);
-                    }
+## 💡 Usage
 
-                    const result = await response.json();
+1. **Enter Your Topic**: Describe what you want to post about
+2. **Select Tone**: Choose the appropriate tone for your audience
+3. **Choose Platform**: Select your target social media platform
+4. **Generate**: Click "Generate Post" and wait for AI magic
+5. **Copy & Share**: Use the copy button to quickly share your content
 
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        return result.candidates[0].content.parts[0].text;
-                    } else {
-                        throw new Error("Invalid response structure from API.");
-                    }
+## 🎨 Customization
 
-                } catch (error) {
-                    attempt++;
-                    if (attempt >= maxRetries) {
-                        throw error; // Rethrow error after max retries
-                    }
-                    console.log(`Attempt ${attempt} failed. Retrying in ${delay}ms...`);
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2; // Exponential backoff
-                }
-            }
-        }
+### Styling
+The application uses Tailwind CSS for styling. You can customize:
+- Colors by modifying the color classes
+- Layout by adjusting spacing and sizing classes
+- Animations by updating the CSS animations
 
-        // --- UI Helper Functions ---
-        function showLoader(isLoading) {
-            loader.style.display = isLoading ? 'block' : 'none';
-            generateBtn.disabled = isLoading;
-            generateBtn.innerText = isLoading ? 'Generating...' : 'Generate Post';
-            if (isLoading) {
-                generateBtn.classList.add('cursor-not-allowed', 'opacity-70');
-            } else {
-                generateBtn.classList.remove('cursor-not-allowed', 'opacity-70');
-            }
-        }
+### Adding New Platforms
+To add support for new social media platforms:
+1. Add the platform option to the select dropdown
+2. Update the prompt generation logic if needed
 
-        function showError(message) {
-            errorBox.innerText = message;
-            errorBox.style.display = 'block';
-        }
+### Adding New Tones
+To add new tone options:
+1. Add the tone to the tone select dropdown
+2. The AI will automatically adapt to the new tone
 
-        // --- Event Listeners ---
-        generateBtn.addEventListener('click', generatePost);
-        
-        copyBtn.addEventListener('click', () => {
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = resultDiv.innerText;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
-            copyBtn.innerText = 'Copied!';
-            setTimeout(() => {
-                copyBtn.innerText = 'Copy to Clipboard';
-            }, 2000);
-        });
+## 🔧 Configuration
 
-    </script>
-</body>
-</html>
+### API Settings
+You can modify the API configuration in the `callGemini` function:
+- **Model**: Currently uses `gemini-2.5-flash-preview-05-20`
+- **Retry Logic**: 3 attempts with exponential backoff
+- **Timeout**: Configurable delay between retries
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Commit your changes**
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+4. **Push to the branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open a Pull Request**
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Google Gemini AI** for powering the content generation
+- **Tailwind CSS** for the beautiful styling framework
+- **Google Fonts** for the Inter font family
+
+## 📞 Contact
+
+**Parth Patel** - [@prassytech](https://github.com/prassytech)
+
+Project Link: [https://github.com/prassytech/Social-Post-Generator](https://github.com/prassytech/Social-Post-Generator)
+
+---
+
+⭐ Star this repository if you found it helpful!
 
 
