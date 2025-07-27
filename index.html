@@ -146,7 +146,7 @@
             let prompt = `Act as a social media marketing expert. Write a post for ${platform} about "${topic}" in a ${tone} tone. Include 2-3 relevant hashtags.`;
             
             if (postLength === 'Short') {
-                prompt += " Keep the post concise, around 2-3 lines.Write a post for ${platform} about "${topic}" in a ${tone} tone.";
+                prompt += " Keep the post concise, around 2-3 lines.";
             }
 
             try {
@@ -173,7 +173,7 @@
 
             while (attempt < maxRetries) {
                 try {
-                    const apiKey = "AIzaSyC5QsomH270fImykkBttB3NZeAhAeLL7tQ"; // Canvas will provide the key
+                    const apiKey = ""; // Canvas will provide the key
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
                     
                     const payload = {
@@ -252,5 +252,4 @@
     </script>
 </body>
 </html>
-
 
